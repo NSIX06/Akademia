@@ -1,5 +1,5 @@
 <?php
-    include_once("class/Produto.php");
+    include_once("class/User.php");
 ?>
 
 <!DOCTYPE html>
@@ -8,13 +8,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="assets/css/estilo.css" rel="stylesheet">
+    <title>Akademia</title>
+    <link href="assets/estilo.css" rel="stylesheet">
 </head>
 <body>
 
-    <h1>Produtos</h1>
-    <h2>Novo produto</h2>
+    <h1>Cadastre-se aqui</h1>
+  
 
     <form method="POST">
 
@@ -40,12 +40,12 @@
 
             if ( isset($_REQUEST["inserir"]) ) //evitar que o procedimento seja executado sem apertar o botão
             {
-                $p = new Produto(); //criar objeto da classe Produto
-                $p->create($_REQUEST["nome"], $_REQUEST["valor"], $_REQUEST["categoria"]); // encapsular os valores do form no objeto produto
+                $p = new User(); //criar objeto da classe Produto
+                $p->create($_REQUEST["nome"], $_REQUEST["email"], $_REQUEST["dtNascimento"],  $_REQUEST["cidade"], $_REQUEST["senha"]); // encapsular os valores do form no objeto produto
                 
-                echo $p->inserirProduto() == true ?
-                        "<p>Produto cadastrado.</p>" :
-                        "<p>Ocorreu um erro.</p>";
+                echo $p->inserirUser() == true ?
+                        "<p>Usuário cadastrado!</p>" :
+                        "<p>Ocorreu um erro!</p>";
             }
         ?>
 
