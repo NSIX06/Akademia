@@ -13,6 +13,23 @@
 </head>
 <body>
 
+<header>
+        <nav>
+            <a href="">Início</a>
+            <a href="">Modalidades</a>
+            <a href="">Planos</a>
+            <a href="">Eventos</a>
+            <a href="">Área restrita</a>
+        </nav>
+
+        <img src="assests/akademia.png" alt="logotipo">
+    </header>
+
+    <main>
+        <section id="area-banner">
+            <img src="assests/homem.png" alt="">
+        </section>
+
     <h1>Cadastre-se aqui</h1>
   
 
@@ -50,6 +67,11 @@
         ?>
 
     </form>
+
+    <footer>
+        <p>Desenvolvido por Avelar, 2023</p>
+        <p>Técnico em Informática Senac Santos</p>
+    </footer>
     
 </body>
 </html>
