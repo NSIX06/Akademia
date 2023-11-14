@@ -22,35 +22,39 @@
             <a href="">Área restrita</a>
         </nav>
 
-        <img src="assests/akademia.png" alt="logotipo">
+        <img src="assets/akademia.png" alt="logotipo">
     </header>
 
     <main>
-        <section id="area-banner">
-            <img src="assets/homem.png" alt="">
-        </section>
+
+
 
     <h1>Cadastre-se aqui</h1>
 
+    <section id = "poost">
     <form method="POST">
 
         <label>Nome:</label>
-        <input type="text" name="nome" minlength="3" required><br><br>
+        <input type="text" name="nome" minlength="3" required placeholder="Informe seu nome completo"><br><br>
 
         <label>E-mail:</label>
-        <input type="text" name="email" minlength="3" required><br><br>
+        <input type="text" name="email" minlength="3" required  placeholder="Informe seu e-mail"><br><br>
 
         <label>Data de Nascimento:</label>
-        <input type="text" name="dtNascimento" minlength="3" required><br><br>
+        <input type="text" name="dtNascimento" minlength="3" required placeholder="Informe sua data de nascimento"><br><br>
 
         
         <label>Cidade:</label>
-        <input type="text" name="cidade" minlength="3" required><br><br>
+        <input type="text" name="cidade" minlength="3" required placeholder="Informe sua cidade"><br><br>
 
         <label>Senha:</label>
-        <input type="text" name="senha" minlength="3" required><br><br>
+        <input type="password" name="senha" minlength="3" required placeholder="Informe uma senha com 8 caracteres ou mais"><br><br>
 
-        <input type="submit" name="inserir" value="Inserir">
+        <label>Confirme sua senha:</label>
+        <input type="text" name="cfsenha" minlength="3" required placeholder="Repita a senha"><br><br>
+
+
+        <button type="submit" name="inserir">Cadastrar</button>
 
         <?php
 
@@ -67,10 +71,17 @@
 
     </form>
 
+
+    <img src="assets/homem.png" alt="">        
+
+    </section>
+    </main>
+
     <footer>
         <p>Desenvolvido por Avelar, 2023</p>
         <p>Técnico em Informática Senac Santos</p>
     </footer>
+
     
 </body>
 </html>

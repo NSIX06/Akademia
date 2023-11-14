@@ -6,11 +6,12 @@
 }
 
 body{
-    background-color: #FAD824;
+    background: #262626;
 }
 
 header{
     display: flex;
+    background-color: #FAD824;
     align-items: center;
     justify-content: space-between;
     padding: 0 1%;
@@ -24,21 +25,96 @@ a{
     margin: 0 12px;
 }
 
-form{
+h1{
 
     position: relative;
-    right: 300px;
-    text-align: center;
+    top: 100px;
+    right: -425px;
+    padding: 2% 1%;
+    color: white;
+}
+
+#poost{
+
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    top: 100px;
+    right: -300px;
+    border-radius: 10px;
+    border: 1px solid #FAD824;
+    width: 500px;
+    height: 600px;
+    padding: 2% 1%;
+    margin: 0;
+}
+
+form{
+
+
+    display: flex;
+    position: relative;
+    top: 50px;
+    right: -40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 300px;
+    height: 500px;
+    color: white;
 
 }
 
-#area-banner{
+button{
 
-    position: absolute;
-    right: -100px;
+    width: 150px;
+    padding: 2% 1%;
+    color: #000;
+    font-family:  'Inter', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    color: #000;
+    background-color:  #FAD824;
+    border-radius: 5px;
+}
+
+
+::placeholder{
+
+    padding: 2% 1%;
+    color: #FFFFFF;
+}
+
+label {
+
+    position: relative;
+    top: -10px;
+}
+
+input{
+
+    background-color: #262626;
+    color: white;
+    width: 400px;
+    text-decoration: none;
+    border: 1px solid #FAD824;
+    padding: 2% 2%;
+
+}
+
+img{
+
+    position: relative;
+    right: 900;
 }
 
 
 footer{
+
     text-align: center;
+    position: relative;
+    top: 300px;
+    background-color: #FAD824;
 }
