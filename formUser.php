@@ -27,11 +27,10 @@
 
     <main>
         <section id="area-banner">
-            <img src="assests/homem.png" alt="">
+            <img src="assets/homem.png" alt="">
         </section>
 
     <h1>Cadastre-se aqui</h1>
-  
 
     <form method="POST">
 

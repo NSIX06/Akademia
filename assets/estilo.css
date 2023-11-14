@@ -24,6 +24,21 @@ a{
     margin: 0 12px;
 }
 
+form{
+
+    position: relative;
+    right: 300px;
+    text-align: center;
+
+}
+
+#area-banner{
+
+    position: absolute;
+    right: -100px;
+}
+
+
 footer{
     text-align: center;
 }
