@@ -92,6 +92,17 @@
 
         }
 
+        public function listarUser()
+        {
+            include("db/conn.php");
+
+            $sql = "CALL psListarProduto('')";
+            $data = $conn->query($sql)->fetchAll();
+
+            return $data;
+        }
+
+
     }
 
 ?>
