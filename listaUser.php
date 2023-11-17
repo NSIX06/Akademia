@@ -10,7 +10,7 @@
 <?php
 
     $p = new Produto(); //criar objeto da classe Produto
-    $lista = $p->listarProduto();
+    $lista = $p->listarUser();
 
     foreach ($lista as $item) {
        echo "

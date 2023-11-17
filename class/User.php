@@ -96,7 +96,7 @@
         {
             include("db/conn.php");
 
-            $sql = "CALL psListarProduto('')";
+            $sql = "CALL ListarUser('')";
             $data = $conn->query($sql)->fetchAll();
 
             return $data;
