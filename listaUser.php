@@ -1,26 +1,35 @@
+<?php
+    include_once("class/User.php");
+?>
+
+<script src="assets/js/util.js"></script>
 <section class="lista">
 
 <table>
     <tr>
         <th>Nome</th>
-        <th>Valor</th>
-        <th>Categoria</th>
+        <th>Email</th>
+        <th>dtNascimento</th>
+        <th>Cidade</th>
+        <th>Senha</th>
     </tr>
 
 <?php
 
-    $p = new Produto(); //criar objeto da classe Produto
-    $lista = $p->listarUser();
+    $p = new User(); //criar objeto da classe Produto
+    $lista = $p->lsUsuario();
 
     foreach ($lista as $item) {
-       echo "
+    echo "
             <tr>
-                <td> " . $item["nomeProduto"] . "</td>
-                <td> " . $item["valorUnitario"] . "</td>
-                <td> " . $item["nomeCategoria"] . "</td>
-                <td> <a href='excluirProduto.php?pid=" . $item["idProduto"] .  "'>Excluir</a> </td>
+                <td> " . $item["nome"] . "</td>
+                <td> " . $item["email"] . "</td>
+                <td> " . $item["dtNascimento"] . "</td>
+                <td> " . $item["cidade"] . "</td>
+                <td> " . $item["senha"] . "</td>
+                <td> <a href='delUser.php?pid=" . $item["idUsuario"] .  "' onClick='return confirmar()'>Excluir</a> </td>
             </tr>
-       ";
+    ";
     }
 
 ?>

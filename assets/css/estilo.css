@@ -27,11 +27,18 @@ a{
 
 h1{
 
-    position: relative;
-    top: 100px;
-    right: -425px;
+
+    display: flex;
+    position: absolute;
+    left: 425px;
+    top: 187px;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 44px;
+    letter-spacing: 0em;
     padding: 2% 1%;
     color: white;
+    
 }
 
 #poost{
@@ -39,29 +46,25 @@ h1{
     display: flex;
     flex-direction: row;
     position: relative;
-    top: 100px;
+    top: 200px;
     right: -300px;
     border-radius: 10px;
     border: 1px solid #FAD824;
     width: 500px;
     height: 600px;
-    padding: 2% 1%;
     margin: 0;
+    padding: 2% ;
 }
 
-form{
 
+#poost .man{
 
-    display: flex;
     position: relative;
-    top: 50px;
-    right: -40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 300px;
-    height: 500px;
-    color: white;
+    right: -450px;
+    width: 690px;
+    height: 900px;
+    top: -100px;
+
 
 }
 
@@ -93,6 +96,7 @@ label {
     top: -10px;
 }
 
+
 input{
 
     background-color: #262626;
@@ -104,17 +108,36 @@ input{
 
 }
 
-img{
 
+
+form{
+
+
+    display: flex;
     position: relative;
-    right: 900;
-}
+    top: 50px;
+    right: -40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 300px;
+    height: 500px;
+    color: white;
 
+}
 
 footer{
 
-    text-align: center;
-    position: relative;
-    top: 300px;
-    background-color: #FAD824;
+   
+        position: relative;
+        width: 100%;
+        margin: 0;
+        padding: 0.5% 0;
+        text-align: center;
+        margin: 0;
+        size: 15px;
+        font-size: 10px;
+        top: 400px;
+        background-color: #FAD824;
+ 
 }

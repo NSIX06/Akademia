@@ -9,7 +9,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Akademia</title>
-    <link href="assets/estilo.css" rel="stylesheet">
+
+    
+    
+    <link href="assets/css/estilo.css" rel="stylesheet">
 </head>
 <body>
 
@@ -20,12 +23,14 @@
             <a href="">Planos</a>
             <a href="">Eventos</a>
             <a href="">Área restrita</a>
+            <a href="">Cadastrar</a>
         </nav>
 
         <img src="assets/akademia.png" alt="logotipo">
     </header>
 
     <main>
+        <section>
 
 
 
@@ -72,13 +77,15 @@
     </form>
 
 
-    <img src="assets/homem.png" alt="">        
+        
+    <img class="man" src="assets/homem.png" alt="">        
 
+    </section>
     </section>
     </main>
 
     <footer>
-        <p>Desenvolvido por Avelar, 2023</p>
+        <p>Desenvolvido por Avelar, 2023</p><br>
         <p>Técnico em Informática Senac Santos</p>
     </footer>
 

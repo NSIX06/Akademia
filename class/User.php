@@ -74,12 +74,12 @@
         public function inserirUser()
         {
             include("db/conn.php");
-            $sql = "CALL Usuario(:nome, :dtNascimento, :email, :cidade, :senha)";
+            $sql = "CALL Usuario(:nome, :email, :dtNascimento, :cidade, :senha)";
 
             $data = [
                 'nome' => $this->nome,
-                'dtNascimento' => $this->dtNascimento,
                 'email' => $this->email,
+                'dtNascimento' => $this->dtNascimento,
                 'cidade' => $this->cidade,
                 'senha' => $this->senha,
                 
@@ -92,14 +92,29 @@
 
         }
 
-        public function listarUser()
+        public function lsUsuario()
         {
             include("db/conn.php");
 
-            $sql = "CALL ListarUser('')";
+            $sql = "CALL lsUsuario('')";
             $data = $conn->query($sql)->fetchAll();
 
             return $data;
+        }
+
+        public function delUsuario($_id)
+        {
+            include("db/conn.php");
+            $sql = "CALL delUsuario(:id)";
+
+            $data = [
+                'id' => $_id
+            ];
+
+            $statement = $conn->prepare($sql);
+            $statement->execute($data);
+
+            return true;
         }
 
 
