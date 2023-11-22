@@ -11,11 +11,11 @@ body{
 
 header{
     display: flex;
+    background-color: #FAD824;
     align-items: center;
     justify-content: space-between;
     padding: 0 1%;
 }
-
 a{
     color: #000;
     font-weight: bold;
@@ -72,7 +72,7 @@ button {
 
     padding: 1%;
     position: relative;
-    right: -780px;
+    right: -777px;
     margin-top: 50px;
     width: 300px;
     display: flex;
@@ -87,5 +87,6 @@ button {
 
 
 footer{
+    font-size: 12px;
     text-align: center;
 }

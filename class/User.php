@@ -59,7 +59,7 @@
 
         public function setCidade($_cidade)
         {
-            $this->cidate = $_cidade;
+            $this->cidade = $_cidade;
         }
         public function getSenha()
         {
@@ -115,6 +115,43 @@
             $statement->execute($data);
 
             return true;
+        }
+
+        public function atualizarUsuario($_id)
+        {
+            include("db/conn.php");
+            $sql = "CALL upUsuario(:id, :email, :cidade, :senha)";
+
+            $data = [
+                'id' => $_id,
+                'email' => $this->email,
+                'cidade' => $this->cidade,
+                'senha' => $this->senha
+            ];
+
+            $statement = $conn->prepare($sql);
+            $statement->execute($data);
+
+            return true;
+        }
+
+        public function buscarUsuario($_id)
+        {
+            include("db/conn.php");
+
+            $sql = "CALL bsUsuario('$_id')";
+            $data = $conn->query($sql)->fetchAll();
+
+            foreach ($data as $item) {
+                $this->nome = $item["nome"];
+                $this->email = $item["email"];
+                $this->dtNascimento = $item["dtNascimento"];
+                $this->cidade = $item["cidade"];
+                $this->senha = $item["senha"];
+            }
+
+            return true;
+
         }
 
 
