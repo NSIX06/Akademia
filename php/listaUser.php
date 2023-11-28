@@ -27,8 +27,8 @@
                 <td> " . $item["dtNascimento"] . "</td>
                 <td> " . $item["cidade"] . "</td>
                 <td> " . $item["senha"] . "</td>
-                <td> <a href='delUser.php?pid=" . $item["idUsuario"] .  "' onClick='return confirmar()'>Excluir</a> </td>
-                <td> <a href='editar.php?pid=" . $item["idUsuario"] .  "'>Editar</a> </td>
+                <td> <a href='php/delUser.php?pid=" . $item["idUsuario"] .  "' onClick='return confirmar()'>Excluir</a> </td>
+                <td> <a href='php/editar.php?pid=" . $item["idUsuario"] .  "'>Editar</a> </td>
             </tr>
     ";
     }

@@ -26,10 +26,10 @@
             <a href="">Planos</a>
             <a href="">Eventos</a>
             <a href="restricted.html">Área restrita</a>
-            <a href="formUser.php">Cadastre-se</a>
+            <a href="php/formUser.php">Cadastre-se</a>
         </nav>
 
-        <img src="assets/css/akademia.png" alt="logotipo">
+        <img src="assets/img/akademia.png" alt="logotipo">
     </header>
 
     <main>
@@ -69,7 +69,7 @@
 
 
         
-    <img class="man" src="assets/css/homem.png" alt="">        
+    <img class="man" src="assets/img/homem.png" alt="">        
 
         </section>
     </section>
