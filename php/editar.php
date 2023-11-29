@@ -1,5 +1,5 @@
 <?php
-    include_once("class/User.php");
+    include_once("../class/User.php");
 ?>
 
 <!DOCTYPE html>
@@ -34,8 +34,7 @@
         ";
 
         if ( isset($_REQUEST["atualizar"]) ) //evitar que o procedimento seja executado sem apertar o botão
-        {
-           
+        { 
             $p->setEmail($_REQUEST["email"]);
             $p->setCidade($_REQUEST["cidade"]);
             $p->setSenha($_REQUEST["senha"]);

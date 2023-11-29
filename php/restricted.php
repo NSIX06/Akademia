@@ -1,3 +1,7 @@
+<?php
+    include_once("../class/User.php");
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -12,22 +16,22 @@
 
 
 
-    <link href="assets/css/area.css" rel="stylesheet">
+    <link href="../assets/css/area.css" rel="stylesheet">
 </head>
 
 <body>
 
     <header>
         <nav>
-            <a href="index.html">Início</a>
+            <a href="../index.html">Início</a>
             <a href="">Modalidades</a>
             <a href="">Planos</a>
             <a href="">Eventos</a>
-            <a href="restricted.html">Área restrita</a>
-            <a href="php/formUser.php">Cadastre-se</a>
+            <a href="../php/restricted.php">Área restrita</a>
+            <a href="../php/formUser.php">Cadastre-se</a>
         </nav>
 
-        <img src="assets/img/akademia.png" alt="logotipo">
+        <img src="../assets/img/akademia.png" alt="logotipo">
     </header>
 
     <main>
@@ -54,14 +58,37 @@
                     </section>
 
                     <section class="aaa">
-                        <a href="php/formUser.php">Nao tem cadastro? Cadastre-se aqui.</a>
+                        <a href="../php/formUser.php">Nao tem cadastro? Cadastre-se aqui.</a>
                     </section>
+
+
+                    <?php
+
+                            if (isset($_REQUEST["inserir"]))
+                            {
+                                $u = new User();
+
+                                if ($u->autenticarUsuario($_REQUEST["email"],$_REQUEST["senha"]) == 0)
+                                {
+                                    echo "<p>E-mail e/ou senha incorreto(s)!</p>";                   
+                                }
+                                else 
+                                {
+                                    session_start();
+                                    $_SESSION["nome"] = $u->getNome();
+                                    header("Location: ../php/void.php"); //*redirecionando para outra página
+                                }
+                            }
+
+
+                            ?>
+
                 </form>
 
 
 
 
-                <img class="woaman" src="assets/img/barra.png" alt="">
+                <img class="woaman" src="../assets/img/barra.png" alt="">
 
             </section>
         </section>

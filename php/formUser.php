@@ -1,5 +1,5 @@
 <?php
-    include_once("class/User.php");
+    include_once("../class/User.php");
 ?>
 
 <!DOCTYPE html>
@@ -15,21 +15,21 @@
 
     
     
-    <link href="assets/css/estilo.css" rel="stylesheet">
+    <link href="../assets/css/estilo.css" rel="stylesheet">
 </head>
 <body>
 
 <header>
         <nav>
-            <a href="index.html">Início</a>
+            <a href="../index.html">Início</a>
             <a href="">Modalidades</a>
             <a href="">Planos</a>
             <a href="">Eventos</a>
-            <a href="restricted.html">Área restrita</a>
-            <a href="php/formUser.php">Cadastre-se</a>
+            <a href="../php/restricted.php">Área restrita</a>
+            <a href="../php/formUser.php">Cadastre-se</a>
         </nav>
 
-        <img src="assets/img/akademia.png" alt="logotipo">
+        <img src="../assets/img/akademia.png" alt="logotipo">
     </header>
 
     <main>
@@ -65,11 +65,23 @@
         <button type="submit" name="inserir">Cadastrar</button>
 
 
+       <?php
+        if ( isset($_REQUEST["inserir"]) ) //evitar que o procedimento seja executado sem apertar o botão
+            {
+                $p = new User(); //criar objeto da classe Produto
+                $p->create($_REQUEST["nome"], $_REQUEST["email"], $_REQUEST["dtNascimento"], $_REQUEST["cidade"], $_REQUEST["senha"]); // encapsular os valores do form no objeto produto
+                
+                echo $p->inserirUser() == true?
+                        "<p>Usuário cadastrado.</p>" :
+                        "<p>Ocorreu um erro!</p>";
+            }
+        ?>
+
     </form>
 
 
         
-    <img class="man" src="assets/img/homem.png" alt="">        
+    <img class="man" src="../assets/img/homem.png" alt="">        
 
         </section>
     </section>

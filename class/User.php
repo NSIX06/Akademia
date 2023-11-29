@@ -19,8 +19,10 @@
             $this->email = $_email;
             $this->dtNascimento = $_dtNascimento;
             $this->cidade = $_cidade;
-            $this->senha = $_senha;
+            $this->senha = md5($_senha);
         }
+
+        //* get and set from Nome
 
         public function getNome()
         {
@@ -32,6 +34,11 @@
             $this->nome = $_nome;
         }
 
+        //*
+
+
+        //* get and set from Email
+
         public function getEmail()
         {
             return $this->email;
@@ -41,6 +48,11 @@
         {
             $this->email = $_email;
         }
+
+        //*
+        
+
+        //* get and set from dtNascimento
 
         public function getdtNascimento()
         {
@@ -52,6 +64,12 @@
             $this->dtNascimento = $_dtNascimento;
         }
 
+        //*
+
+
+
+        //* get and set from Cidade
+
         public function getCidade()
         {
             return $this->cidade;
@@ -61,6 +79,12 @@
         {
             $this->cidade = $_cidade;
         }
+
+        //*
+
+
+        //* get and set from Senha
+
         public function getSenha()
         {
             return $this->senha;
@@ -71,9 +95,15 @@
             $this->senha = $_senha;
         }
 
+        //*
+
+
+        
+             //?Função de inserir usuário
+
         public function inserirUser()
         {
-            include("db/conn.php");
+            include("../db/conn.php");
             $sql = "CALL Usuario(:nome, :email, :dtNascimento, :cidade, :senha)";
 
             $data = [
@@ -91,20 +121,29 @@
             return true;
 
         }
+        //?
+
+
+
+              //?Função de listar o usuário
 
         public function lsUsuario()
         {
-            include("db/conn.php");
+            include("../db/conn.php");
 
             $sql = "CALL lsUsuario('')";
             $data = $conn->query($sql)->fetchAll();
 
             return $data;
         }
+         //?
+
+
+              //?Função de deletar o usuário
 
         public function delUsuario($_id)
         {
-            include("db/conn.php");
+            include("../db/conn.php");
             $sql = "CALL delUsuario(:id)";
 
             $data = [
@@ -116,10 +155,15 @@
 
             return true;
         }
+        //?
+
+
+
+              //?Função de atualizar o usuário
 
         public function atualizarUsuario($_id)
         {
-            include("db/conn.php");
+            include("../db/conn.php");
             $sql = "CALL upUsuario(:id, :email, :cidade, :senha)";
 
             $data = [
@@ -134,10 +178,14 @@
 
             return true;
         }
+            //?
+
+
+              //?Função de buscar o usuário
 
         public function buscarUsuario($_id)
         {
-            include("db/conn.php");
+            include("../db/conn.php");
 
             $sql = "CALL bsUsuario('$_id')";
             $data = $conn->query($sql)->fetchAll();
@@ -153,8 +201,35 @@
             return true;
 
         }
+             //?
 
 
+
+                //?Função de autenticar o usuário
+
+            public function autenticarUsuario($_email, $_senha)
+        {
+
+                include("../db/conn.php");
+                $sql = "CALL Login('$_email', '$_senha')";
+                $stmt = $conn->prepare($sql);
+
+                $stmt->execute(); 
+                
+
+                if ($user = $stmt->fetch()) //se encontrar registro
+                {
+                
+                    return 1;
+                }
+                else
+                {
+                    return 0;
+                }
+            
+
+        }
+                //?
     }
 
 ?>
