@@ -10,10 +10,18 @@
     <h1>Área do Usuário</h1>
 
     <?php
-        session_start();
-        echo "<p>Olá, " . $_SESSION["nome"] . "</p>";
+        if (isset($_COOKIE["nome"]))
+        {
+            echo "<p>Olá, " . $_COOKIE["nome"] . "</p>";
+        }
+        else {
+            header("Location: ../php/restricted.php");
+        }
+        
     ?>
 
     <a href="../index.html">Inicio</a>
+    <a href="../php/formUser.php">Cadastrar-se</a>
+    <a href="../php/sair.php">Sair</a>
 </body>
 </html>

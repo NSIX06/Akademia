@@ -219,7 +219,7 @@
 
                 if ($user = $stmt->fetch()) //se encontrar registro
                 {
-                
+                    $this->nome = $user["nome"];
                     return 1;
                 }
                 else

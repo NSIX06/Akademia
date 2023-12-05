@@ -64,24 +64,44 @@
 
                     <?php
 
+                            //if(isset($_REQUEST["inserir"]))
+                            //{
+                                //$u = new User();
+
+                                //if ($u->autenticarUsuario($_REQUEST["email"],$_REQUEST["senha"]) == 0)
+                                //{
+                                   // echo "<p>E-mail e/ou senha incorreto(s)!</p>";                   
+                                //}
+                                //else 
+                                //{
+                                    //session_start();
+                                    //$_SESSION["nome"] = $u->getNome();
+                                    //header("Location: ../php/void.php"); //*redirecionando para outra página
+                                //}
+                            //}
+
                             if (isset($_REQUEST["inserir"]))
                             {
                                 $u = new User();
-
-                                if ($u->autenticarUsuario($_REQUEST["email"],$_REQUEST["senha"]) == 0)
+                
+                                if ($u->autenticarUsuario($_REQUEST["email"], $_REQUEST["senha"]) == 0)
                                 {
-                                    echo "<p>E-mail e/ou senha incorreto(s)!</p>";                   
+                                    echo "<p>Usuário e/ou senha incorreto(s).</p>";                   
                                 }
-                                else 
-                                {
-                                    session_start();
-                                    $_SESSION["nome"] = $u->getNome();
-                                    header("Location: ../php/void.php"); //*redirecionando para outra página
+                                else {
+                                    ////Utilizando dados em sessão
+                                    // session_start();
+                                    // $_SESSION["nome"] = $u->getUsuario();
+                                    // header("Location: areaRestrita.php"); //redirecionando para outra página
+                                    $cookieName = "nome";
+                                    $cookieValue = $u->getNome();
+                                    setcookie($cookieName, $cookieValue, time() + 86400, "/");
+                                    header("Location: ../php/void.php");
                                 }
                             }
-
-
-                            ?>
+                            
+                
+                        ?>
 
                 </form>
 

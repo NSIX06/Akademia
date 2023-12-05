@@ -65,7 +65,7 @@
         <button type="submit" name="inserir">Cadastrar</button>
 
 
-       <?php
+    <?php
         if ( isset($_REQUEST["inserir"]) ) //evitar que o procedimento seja executado sem apertar o botão
             {
                 $p = new User(); //criar objeto da classe Produto
