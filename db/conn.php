@@ -1,5 +1,7 @@
 <?php
 
+
+
     $dbHost     = "localhost";
     $dbUsername = "root";
     $dbPassword = "";
@@ -11,6 +13,7 @@
 
     if ($link->connect_error) {
         die("Connection failed: " . $db->connect_error);
-}
+    }
+
 
 ?>

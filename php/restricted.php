@@ -1,5 +1,6 @@
 <?php
     include_once("../class/User.php");
+    error_reporting(0);
 ?>
 
 <!DOCTYPE html>

@@ -103,15 +103,17 @@
 
         public function inserirUser()
         {
-            include("../db/conn.php");
-            $sql = "CALL Usuario(:nome, :email, :dtNascimento, :cidade, :senha)";
+            try 
+            {
+                include("../db/conn.php");
+                $sql = "CALL Usuario(:nome, :email, :dtNascimento, :cidade, :senha)";
 
-            $data = [
-                'nome' => $this->nome,
-                'email' => $this->email,
-                'dtNascimento' => $this->dtNascimento,
-                'cidade' => $this->cidade,
-                'senha' => $this->senha,
+                $data = [
+                    'nome' => $this->nome,
+                    'email' => $this->email,
+                    'dtNascimento' => $this->dtNascimento,
+                    'cidade' => $this->cidade,
+                    'senha' => $this->senha,
                 
             ];
 
@@ -119,6 +121,12 @@
             $statement->execute($data);
 
             return true;
+        }
+
+            catch (\Exception $e)
+            {
+                return false;
+            }
 
         }
         //?
@@ -129,13 +137,21 @@
 
         public function lsUsuario()
         {
-            include("../db/conn.php");
+            try 
+            {
+                include("../db/conn.php");
 
-            $sql = "CALL lsUsuario('')";
-            $data = $conn->query($sql)->fetchAll();
+                $sql = "CALL lsUsuario('')";
+                $data = $conn->query($sql)->fetchAll();
 
-            return $data;
+                return $data;
+            }
+            catch (\Exception $e)
+                {
+                    return false;
+                }
         }
+            
          //?
 
 
@@ -143,17 +159,25 @@
 
         public function delUsuario($_id)
         {
-            include("../db/conn.php");
-            $sql = "CALL delUsuario(:id)";
+        try 
+            {
+                include("../db/conn.php");
+                $sql = "CALL delUsuario(:id)";
 
-            $data = [
-                'id' => $_id
-            ];
+                $data = [
+                    'id' => $_id
+                ];
 
-            $statement = $conn->prepare($sql);
-            $statement->execute($data);
+                $statement = $conn->prepare($sql);
+                $statement->execute($data);
 
-            return true;
+                return true;
+            }
+
+        catch (\Exception $e)
+        {
+            return false;
+        }
         }
         //?
 
@@ -163,8 +187,10 @@
 
         public function atualizarUsuario($_id)
         {
+            
+        try{
             include("../db/conn.php");
-            $sql = "CALL upUsuario(:id, :email, :cidade, :senha)";
+            $sql = "CALL upUsuario(:email, :cidade, :senha, :id)";
 
             $data = [
                 'id' => $_id,
@@ -178,6 +204,12 @@
 
             return true;
         }
+            catch (\Exception $e)
+            {
+                return false;
+            }
+    
+    }
             //?
 
 
@@ -185,22 +217,23 @@
 
         public function buscarUsuario($_id)
         {
-            include("../db/conn.php");
+                    include("../db/conn.php");
 
-            $sql = "CALL bsUsuario('$_id')";
-            $data = $conn->query($sql)->fetchAll();
+                    $sql = "CALL bsUsuario('$_id')";
+                    $data = $conn->query($sql)->fetchAll();
 
-            foreach ($data as $item) {
-                $this->nome = $item["nome"];
-                $this->email = $item["email"];
-                $this->dtNascimento = $item["dtNascimento"];
-                $this->cidade = $item["cidade"];
-                $this->senha = $item["senha"];
-            }
+                    foreach ($data as $item) {
+                        $this->nome = $item["nome"];
+                        $this->email = $item["email"];
+                        $this->dtNascimento = $item["dtNascimento"];
+                        $this->cidade = $item["cidade"];
+                        $this->senha = $item["senha"];
+                    }
 
             return true;
-
         }
+    
+
              //?
 
 
@@ -208,7 +241,9 @@
                 //?Função de autenticar o usuário
 
             public function autenticarUsuario($_email, $_senha)
-        {
+            {
+
+                try{
 
                 include("../db/conn.php");
                 $sql = "CALL Login('$_email', '$_senha')";
@@ -226,7 +261,12 @@
                 {
                     return 0;
                 }
-            
+            }
+                catch (\Exception $e)
+                {
+                    return false;
+                }
+        
 
         }
                 //?

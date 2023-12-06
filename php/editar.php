@@ -1,5 +1,6 @@
 <?php
     include_once("../class/User.php");
+    error_reporting(0);
 ?>
 
 <!DOCTYPE html>
@@ -21,6 +22,7 @@
         echo "
             <form method='POST'>
 
+
             <label>E-mail:</label>
             <input type='text' name='email' minlength='3' value='" . $p->getEmail() . "' required><br><br>
 
@@ -33,16 +35,16 @@
             <input type='submit' name='atualizar' value='Atualizar'>
         ";
 
-        if ( isset($_REQUEST["atualizar"]) ) //evitar que o procedimento seja executado sem apertar o botão
+        if ( isset($_REQUEST["atualizar"]) ) //*Evitar que o procedimento seja executado sem apertar o botão
         { 
             $p->setEmail($_REQUEST["email"]);
             $p->setCidade($_REQUEST["cidade"]);
             $p->setSenha($_REQUEST["senha"]);
         
 
-            echo $p->atualizarUsuario($_GET["pid"]) == true ?
-                    "<p>Usuário atualizado!.</p>" :
-                    "<p>Ocorreu um erro.</p>";
+            echo $p->atualizarUsuario ($_GET["pid"] ) == true ?
+                    "<p>Usuário atualizado!</p>" :
+                    "<p>Ocorreu um erro!</p>";
         }
     ?>
 

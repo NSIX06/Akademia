@@ -21,7 +21,6 @@
     ?>
 
     <a href="../index.html">Inicio</a>
-    <a href="../php/formUser.php">Cadastrar-se</a>
     <a href="../php/sair.php">Sair</a>
 </body>
 </html>
